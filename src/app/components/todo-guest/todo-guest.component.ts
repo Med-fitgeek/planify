@@ -44,6 +44,7 @@ export class TodoGuestComponent implements OnInit {
       this.todoItems.push(this.newTodoItem);
       this.updateStorage();
       this.resetNewTodoItem(); // Reset the form
+      this.showForm = false;  // Cacher le formulaire après l'ajout
     }
   }
 
