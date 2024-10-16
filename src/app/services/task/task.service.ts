@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TodoItem } from '../../models/todoItem.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'https://localhost:5010/api/TodoItem'; 
+  private apiUrl = `${environment.apiUrl}/TodoItem`; 
 
   constructor(private http: HttpClient) { }
 
