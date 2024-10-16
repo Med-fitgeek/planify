@@ -1,0 +1,154 @@
+/* General task container styles */
+.task-container {
+    width: 700px;
+    margin: 50px ;
+    font-family: Arial, sans-serif;
+  }
+
+  
+  /* Create Task Form */
+
+  .showFormButton {
+    margin-top: 5%;
+    margin-bottom: 15%;
+  }
+
+  .CancelButton {
+    background-color: rgb(209, 65, 65);
+  }
+
+  .CancelButton:hover {
+    background-color: red;
+  }
+
+  .create-task {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 5px;
+  }
+  
+  .section-titles {
+    color: white;
+  }
+  
+  .create-task h3 {
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  input, select, textarea {
+    width: 85%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+ 
+  
+  
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .delete-icon {
+    color: red; /* Couleur de l'icône */
+    cursor: pointer; /* Curseur de pointeur pour l'interaction */
+    font-size: 20px; /* Taille de l'icône */
+    transition: color 0.3s; /* Transition pour l'effet de survol */
+  }
+  
+  .delete-icon:hover {
+    color: darkred; /* Changement de couleur au survol */
+  }
+  
+  
+  /* Task List */
+  .task-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .task-name, .task-status, .task-date {
+    margin-right: 15px;
+  }
+  
+  button {
+    background-color: #8a4aae;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #451a5e;
+  }
+  
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+  }
+  
+  .modal-content button {
+    margin-top: 20px;
+    border-radius: 30px;
+    width: 30%;
+    background-color: #8a4aae;
+  }
+  
+  .modal-content button:hover {
+    background-color: #451a5e;
+  }
+  

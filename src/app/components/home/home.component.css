@@ -1,0 +1,35 @@
+/* Container for the entire home page */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  /* Style for the logo container */
+  .logo {
+    margin-bottom: 50px;
+  }
+  
+  /* Ensure the logo image is centered and has appropriate size */
+  .logo img {
+    max-width: 200px;
+  }
+  
+  /* Container for the buttons */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .title {
+    color: white;
+    margin-bottom: 15%;
+  }
+  
+  
+
+ 

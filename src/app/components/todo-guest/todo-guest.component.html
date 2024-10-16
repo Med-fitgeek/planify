@@ -1,0 +1,67 @@
+<div class="task-container">
+  <h2 class="section-titles">Interface de personnalisée de gestion tâches</h2>
+
+  <!-- Bouton pour afficher le formulaire de création -->
+  <button class="showFormButton" *ngIf="!showForm" (click)="toggleForm()">Ajouter une tâche</button>
+
+  <!-- Create Task Form (s'affiche uniquement si showForm est vrai) -->
+  <div *ngIf="showForm" class="create-task">
+    <h3 >Créer une nouvelle tâche</h3>
+    <form (submit)="createTodoItem()">
+      <div class="form-group">
+        <label for="task-name">Titre </label>
+        <input type="text" id="task-name" [(ngModel)]="newTodoItem.name" name="taskName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="task-status">Status:</label>
+        <select id="task-status" [(ngModel)]="newTodoItem.status" name="taskStatus" required>
+          <option value="planned">Plannifié</option>
+          <option value="in-progress">En cours</option>
+          <option value="done">Terminé</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="task-date">Date:</label>
+        <input type="date" id="task-date" [(ngModel)]="newTodoItem.date" name="taskDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="task-desc">Description:</label>
+        <textarea id="task-desc" [(ngModel)]="newTodoItem.description" name="taskDescription" required></textarea>
+      </div>
+
+      <button type="submit">Créer la tâche</button>
+      <button type="button" class="CancelButton" (click)="cancelForm()">Annuler</button>
+    </form>
+  </div>
+
+  <!-- Ligne horizontale de séparation -->
+  <hr />
+
+  <!-- Task List -->
+  <div class="task-list">
+    <h3 class="section-titles">Mes tâches existantes</h3>
+    <ul>
+      <li *ngFor="let todoItem of todoItems" (click)="openTodoItemModal(todoItem)">
+        <span class="task-name">{{ todoItem.name }}</span>
+        <span class="task-status">{{ todoItem.status }}</span>
+        <span class="task-date">{{ todoItem.date }}</span>
+        <i class="fas fa-trash delete-icon" (click)="todoItem?.id && deleteTodoItem(todoItem.id); $event.stopPropagation();"></i>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Modal for Task Details -->
+  <div *ngIf="selectedTodoItem" class="modal">
+    <div class="modal-content">
+      <h3>Détails de la tâche</h3>
+      <p><strong>Nom:</strong> {{ selectedTodoItem.name }}</p>
+      <p><strong>Status:</strong> {{ selectedTodoItem.status }}</p>
+      <p><strong>Date:</strong> {{ selectedTodoItem.date }}</p>
+      <p><strong>Description:</strong> {{ selectedTodoItem.description }}</p>
+      <button (click)="closeTodoItemModal()">Fermer</button>
+    </div>
+  </div>
+</div>
