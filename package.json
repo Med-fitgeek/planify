@@ -2,6 +2,7 @@
   "name": "my-todo-app",
   "version": "0.0.0",
   "scripts": {
+    "deploy": "ng build --base-href https://fitgeek.github.io/PlanifyFront/ && npx gh-pages -d dist/my-todo-app",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -29,6 +30,7 @@
     "@angular/cli": "^17.2.2",
     "@angular/compiler-cli": "^17.2.0",
     "@types/jasmine": "~5.1.0",
+    "gh-pages": "^6.2.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
