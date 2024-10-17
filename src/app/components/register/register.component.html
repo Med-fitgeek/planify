@@ -1,32 +1,39 @@
 <div class="login-container">
-    <h2>Formulaire d'inscription</h2>
-  
-    <form [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Nom d'utilisateur</label>
-        <input id="username" type="text" formControlName="username" placeholder="Saisissez your username" />
-        <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched">
-          <small>Username is required</small>
-        </div>
+  <h2>Formulaire d'inscription</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Nom d'utilisateur</label>
+      <input id="username" type="text" formControlName="username" placeholder="Saisissez votre nom d'utilisateur" />
+      <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched">
+        <small>Le nom d'utilisateur est requis</small>
       </div>
-  
-      <div>
-        <label for="password">Mot de passe</label>
-        <input id="password" type="password" formControlName="password" placeholder="Saisissez votre mot de passe" />
-        <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
-          <small>Password is required (minimum 6 characters)</small>
-        </div>
+    </div>
+
+    <div>
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" formControlName="password" placeholder="Saisissez votre mot de passe" />
+      <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+        <small>
+          Le mot de passe doit contenir :
+          <ul>
+            <li *ngIf="registerForm.controls['password'].errors?.['minlength']">Au moins 6 caractères</li>
+            <li *ngIf="registerForm.controls['password'].errors?.['passwordStrength']">Une majuscule</li>
+            <li *ngIf="registerForm.controls['password'].errors?.['passwordStrength']">Une minuscule</li>
+            <li *ngIf="registerForm.controls['password'].errors?.['passwordStrength']">Un caractère spécial</li>
+          </ul>
+        </small>
       </div>
-  
-      <div>
-        <label for="confirmPassword">Mot de passe</label>
-        <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirmez votre mot de passe" />
-        <div *ngIf="registerForm.controls['confirmPassword'].invalid && registerForm.controls['confirmPassword'].touched">
-          <small>Passwords must match</small>
-        </div>
+    </div>
+
+    <div>
+      <label for="confirmPassword">Confirmez le mot de passe</label>
+      <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirmez votre mot de passe" />
+      <div *ngIf="registerForm.hasError('notSame') && registerForm.controls['confirmPassword'].touched">
+        <small>Les mots de passe doivent correspondre</small>
       </div>
-  
-      <button type="submit" [disabled]="registerForm.invalid">S'inscrire</button>
-    </form>
-  </div>
-  
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">S'inscrire</button>
+  </form>
+</div>

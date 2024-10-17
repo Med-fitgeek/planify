@@ -1,25 +1,26 @@
 <div class="login-container">
-    <h2>Formulaire de connexion</h2>
-  
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Nom d'utilisateur</label>
-        <input id="username" type="text" formControlName="username" placeholder="Saisissez votre nom d'utlisateur" />
-        <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
-          <small>Username is required</small>
-        </div>
-      </div>
-  
-      <div>
-        <label for="password">Mot de passe</label>
-        <input id="password" type="password" formControlName="password" placeholder="Saisissez votre mot de passe" />
-        <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
-          <small>Password is required (minimum 6 characters)</small>
-        </div>
-      </div>
-  
-  
-      <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
-    </form>
+  <h2>Formulaire de connexion</h2>
+
+  <!-- Affichage du message d'erreur -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
   </div>
-  
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Nom d'utilisateur</label>
+      <input id="username" type="text" formControlName="username" placeholder="Saisissez votre nom d'utilisateur" />
+      <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+        <small>Nom d'utilisateur requis</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" formControlName="password" placeholder="Saisissez votre mot de passe" />
+      
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+  </form>
+</div>

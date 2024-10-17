@@ -53,7 +53,17 @@
     outline: none;
     border-color: #8a4aae;
   }
+
+  .error-message{
+    color: red;
+    margin-bottom: 5%;
+  }
   
+  small {
+    color: red;
+    text-align: left;
+    margin-bottom: 10%;
+  }
 
   /* Form shadow on hover */
   .form-container:hover {

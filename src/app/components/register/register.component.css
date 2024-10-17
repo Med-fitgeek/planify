@@ -54,6 +54,12 @@
     border-color: #8a4aae;
   }
   
+  small {
+    color: red;
+    text-align: left;
+    padding-bottom: 10%;
+  }
+
 
   /* Form shadow on hover */
   .form-container:hover {
