@@ -1,5 +1,5 @@
 <div class="task-container">
-  <h2 class="section-titles">Interface de personnalisée de gestion tâches</h2>
+  <h2 class="section-titles">Interface personnalisée de gestion tâches</h2>
 
   <!-- Bouton pour afficher le formulaire de création -->
   <button class="showFormButton" *ngIf="!showForm" (click)="toggleForm()">Ajouter une tâche</button>
@@ -53,7 +53,7 @@
     </ul>
   </div>
 
-  <!-- Modal for Task Details -->
+  <!-- Modal pour les Details -->
   <div *ngIf="selectedTodoItem" class="modal">
     <div class="modal-content">
       <h3>Détails de la tâche</h3>

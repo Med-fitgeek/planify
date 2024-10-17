@@ -1,4 +1,4 @@
-/* General task container styles */
+/* Style du conteneur principal */
 .task-container {
   width: 700px;
   margin: 50px ;
@@ -6,7 +6,7 @@
 }
 
 
-/* Create Task Form */
+/* Style du fromulaire de creation*/
 
 .showFormButton {
   margin-top: 5%;
@@ -75,10 +75,10 @@ input, select, textarea {
 }
 
 .delete-icon {
-  color: red; /* Couleur de l'icône */
-  cursor: pointer; /* Curseur de pointeur pour l'interaction */
-  font-size: 20px; /* Taille de l'icône */
-  transition: color 0.3s; /* Transition pour l'effet de survol */
+  color: red; 
+  cursor: pointer; 
+  font-size: 20px; 
+  transition: color 0.3s; 
 }
 
 .delete-icon:hover {
@@ -86,7 +86,7 @@ input, select, textarea {
 }
 
 
-/* Task List */
+/* Style de la liste des taches */
 .task-list ul {
   list-style-type: none;
   padding: 0;
@@ -116,7 +116,7 @@ button:hover {
   background-color: #451a5e;
 }
 
-/* Modal styles */
+/* Style du Modal */
 .modal {
   position: fixed;
   top: 0;

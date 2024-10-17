@@ -48,6 +48,7 @@ export class RegisterComponent {
     return password === confirmPassword ? null : { notSame: true };
   }
 
+  //SSoumission et enregistrement du formulaire
   onSubmit() {
     if (this.registerForm.valid) {
       const { username, password } = this.registerForm.value;

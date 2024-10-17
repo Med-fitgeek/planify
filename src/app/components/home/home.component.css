@@ -1,4 +1,4 @@
-/* Container for the entire home page */
+/* Conteneur de la page Home */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -8,17 +8,16 @@
     text-align: center;
   }
   
-  /* Style for the logo container */
+  /* Style du logo*/
   .logo {
     margin-bottom: 50px;
   }
   
-  /* Ensure the logo image is centered and has appropriate size */
   .logo img {
     max-width: 200px;
   }
   
-  /* Container for the buttons */
+  /* Conteneur pour les boutons */
   .button-container {
     display: flex;
     flex-direction: column;

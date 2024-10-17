@@ -29,7 +29,6 @@ export class TodoGuestComponent implements OnInit {
     this.loadTodoItems();
   }
 
-  // Load TodoItems from sessionStorage
   loadTodoItems() {
     const storedTodoItems = sessionStorage.getItem('guestTodoItems');
     if (storedTodoItems) {
@@ -37,39 +36,39 @@ export class TodoGuestComponent implements OnInit {
     }
   }
 
-  // Create a new TodoItem and update sessionStorage
+  // Creer un new TodoItem et mettre a jour le sessionStorage
   createTodoItem() {
     if (this.newTodoItem.name && this.newTodoItem.date && this.newTodoItem.description) {
-      this.newTodoItem.id = this.todoItems.length + 1; // Assign a simple ID
+      this.newTodoItem.id = this.todoItems.length + 1; // definir l'ID
       this.todoItems.push(this.newTodoItem);
       this.updateStorage();
-      this.resetNewTodoItem(); // Reset the form
+      this.resetNewTodoItem(); // reinitialiser le formulaire
       this.showForm = false;  // Cacher le formulaire après l'ajout
     }
   }
 
-  // Delete a TodoItem and update sessionStorage
+  // Supptimer un TodoItem et mettre a jour le sessionStorage
   deleteTodoItem(id: number) {
     this.todoItems = this.todoItems.filter(todoItem => todoItem.id !== id);
     this.updateStorage();
   }
 
-  // Update sessionStorage with current TodoItems
+  // Mettre a jour le sessionStorage avec les TodoItems courants
   updateStorage() {
     sessionStorage.setItem('guestTodoItems', JSON.stringify(this.todoItems));
   }
 
-  // Reset the new TodoItem input fields
+  // Reinitialiser le nouveau TodoItem input fields
   resetNewTodoItem() {
     this.newTodoItem = { id: 0, name: '', status: 'planned', date: '', description: '' };
   }
 
-  // Open TodoItem modal (optional)
+  // Ouvrir TodoItem modal 
   openTodoItemModal(todoItem: TodoItem) {
     this.selectedTodoItem = todoItem;
   }
 
-  // Close TodoItem modal (optional)
+  // Fermer TodoItem modal 
   closeTodoItemModal() {
     this.selectedTodoItem = null;
   }
