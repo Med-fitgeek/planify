@@ -91,6 +91,6 @@ Pratiquer les concepts REST, composants Angular, services et architecture API s�
 
 ### 📄 Licence
 Ce projet est libre pour usage éducatif. À personnaliser selon tes besoins.
-````
+
 
 
